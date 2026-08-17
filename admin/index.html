@@ -4,13 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Panel de Administración</title>
-    <!-- Desactivamos la carga manual para mayor estabilidad -->
     <script>
       window.CMS_MANUAL_INIT = true;
     </script>
   </head>
   <body>
-    <!-- Forzamos la ultimísima versión disponible para evitar bugs con Netlify -->
     <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
 
     <script>
@@ -20,7 +18,10 @@
             name: 'github',
             repo: 'dwebsmanagment-CEO/Prueba1',
             branch: 'main',
-            app_id: 'Ov23liUVAgXcSMySYZby'
+            app_id: 'Ov23liUVAgXcSMySYZby',
+            auth_type: 'pkce',
+            base_url: 'https://github.com',
+            auth_endpoint: 'login/oauth/authorize'
           },
           media_folder: 'images',
           public_folder: '/images',
