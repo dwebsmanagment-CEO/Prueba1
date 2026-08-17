@@ -13,7 +13,7 @@
     <!-- Cargamos el CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
-    <!-- Inyectamos la configuración en tiempo real -->
+    <!-- Inyectamos tu configuración exacta sin base_url -->
     <script>
       CMS.init({
         config: {
@@ -22,10 +22,8 @@
             repo: 'dwebsmanagment-CEO/Prueba1',
             branch: 'main',
             auth_type: 'pkce',
-            app_id: 'Ov23liUVAgXcSMySYZby',
-            base_url: 'https://github.com' /* <-- ESTA ES LA CLAVE MÁGICA */
+            app_id: 'Ov23liUVAgXcSMySYZby'
           },
-,
           media_folder: 'images',
           public_folder: '/images',
           collections: [
