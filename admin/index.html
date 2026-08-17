@@ -9,7 +9,8 @@
     </script>
   </head>
   <body>
-    <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
+    <!-- Cargamos el motor moderno de Sveltia CMS -->
+    <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
 
     <script>
       CMS.init({
@@ -18,10 +19,7 @@
             name: 'github',
             repo: 'dwebsmanagment-CEO/Prueba1',
             branch: 'main',
-            app_id: 'Ov23liUVAgXcSMySYZby',
-            auth_type: 'pkce',
-            base_url: 'https://github.com',
-            auth_endpoint: 'login/oauth/authorize'
+            client_id: 'Ov23liUVAgXcSMySYZby'
           },
           media_folder: 'images',
           public_folder: '/images',
