@@ -1,48 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Piloto V2</title>
-    <style>
-        body { 
-            font-family: system-ui, -apple-system, sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            color: #333; 
-            background-color: #f4f4f5;
-        }
-        header { 
-            background: #18181b; 
-            color: white; 
-            padding: 2rem; 
-            text-align: center; 
-        }
-        .container {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-            text-align: center;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-    </style>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel de Administración</title>
+    <!-- Desactivamos la carga de archivos externos para evitar cachés -->
+    <script>
+      window.CMS_MANUAL_INIT = true;
+    </script>
+  </head>
+  <body>
+    <!-- Cargamos el CMS -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
-    <header>
-        <h1>Mi Web Piloto</h1>
-    </header>
-
-    <div class="container">
-        <h2>Bienvenido a la nueva versión</h2>
-        <p>Esta es la página pública. Más adelante, los textos y esta imagen se cambiarán desde tu panel de administración.</p>
-        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Espacio de trabajo limpio">
-    </div>
-
-</body>
+    <!-- Inyectamos la configuración en tiempo real -->
+    <script>
+      CMS.init({
+        config: {
+          backend: {
+            name: 'github',
+            repo: 'dwebsmanagment-CEO/Prueba1', /* <-- CAMBIA ESTO (Ej: dwebsmanagment-CEO/Prueba1) */
+            branch: 'main',
+            auth_type: 'pkce',
+            app_id: 'Ov23liUVAgXcSMySYZby', /* <-- PEGA TU CLIENT ID AQUÍ */
+            base_url: ''
+          },
+          media_folder: 'images',
+          public_folder: '/images',
+          collections: [
+            {
+              name: 'configuracion',
+              label: 'Ajustes de Prueba',
+              files: [
+                {
+                  file: 'datos.json',
+                  name: 'general',
+                  label: 'Textos de la web',
+                  fields: [
+                    { label: 'Título de prueba', name: 'titulo', widget: 'string' }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      });
+    </script>
+  </body>
 </html>
