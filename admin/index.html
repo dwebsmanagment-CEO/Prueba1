@@ -4,16 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Panel de Administración</title>
-    <!-- Desactivamos la carga de archivos externos para evitar cachés -->
+    <!-- Desactivamos la carga manual para mayor estabilidad -->
     <script>
       window.CMS_MANUAL_INIT = true;
     </script>
   </head>
   <body>
-    <!-- Cargamos el CMS -->
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <!-- Forzamos la ultimísima versión disponible para evitar bugs con Netlify -->
+    <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
 
-    <!-- Inyectamos tu configuración exacta sin base_url -->
     <script>
       CMS.init({
         config: {
@@ -21,7 +20,6 @@
             name: 'github',
             repo: 'dwebsmanagment-CEO/Prueba1',
             branch: 'main',
-            auth_type: 'pkce',
             app_id: 'Ov23liUVAgXcSMySYZby'
           },
           media_folder: 'images',
