@@ -9,18 +9,18 @@
     </script>
   </head>
   <body>
-    <!-- Cambiamos la versión a "victoria" para forzar a Chrome a no usar caché -->
-    <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js?v=victoria"></script>
+    <!-- Forzamos una nueva versión para Chrome -->
+    <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js?v=rescate"></script>
 
     <script>
       CMS.init({
         config: {
-          load_config_file: false, /* ✅ Se queda, nos salvó la vida ayer */
+          load_config_file: false, 
           backend: {
             name: 'github',
             repo: 'dwebsmanagment-CEO/Prueba1',
-            branch: 'main'
-            /* ❌ Eliminamos la línea del client_id por completo */
+            branch: 'main',
+            client_id: 'Ov23lifTQxJRG4Z8y78V' /* ✅ Lo devolvemos con tu nueva llave para que Sveltia no se rompa */
           },
           media_folder: 'images',
           public_folder: '/images',
