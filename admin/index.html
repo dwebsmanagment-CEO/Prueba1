@@ -9,18 +9,18 @@
     </script>
   </head>
   <body>
-    <!-- Añadimos un parámetro de versión aquí para forzar a Safari a descargar el motor de nuevo -->
-    <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js?v=madrugada4"></script>
+    <!-- Cambiamos la versión a "victoria" para forzar a Chrome a no usar caché -->
+    <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js?v=victoria"></script>
 
     <script>
       CMS.init({
         config: {
-          load_config_file: false, /* ✅ ¡Aquí está la pieza que faltaba, dentro de config! */
+          load_config_file: false, /* ✅ Se queda, nos salvó la vida ayer */
           backend: {
             name: 'github',
             repo: 'dwebsmanagment-CEO/Prueba1',
-            branch: 'main',
-            client_id: 'Ov23liUVAgXcSMySYZby'
+            branch: 'main'
+            /* ❌ Eliminamos la línea del client_id por completo */
           },
           media_folder: 'images',
           public_folder: '/images',
