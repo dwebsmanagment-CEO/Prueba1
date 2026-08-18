@@ -6,11 +6,21 @@
     <title>Panel de Administración</title>
     <script>
       window.CMS_MANUAL_INIT = true;
+      
+      // El "chivato" para imprimir errores en la pantalla del iPad
+      window.onerror = function (msg, src, line, col, err) {
+        document.body.innerHTML =
+          '<pre style="white-space:pre-wrap;padding:20px;font-family:monospace;color:red;font-size:16px;">' +
+          'ERROR: ' + msg + '\n' +
+          'Línea: ' + line + ':' + col + '\n' +
+          (err && err.stack ? err.stack : '') +
+          '</pre>';
+      };
     </script>
   </head>
   <body>
-    <!-- Forzamos una nueva versión para Chrome -->
-    <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js?v=rescate"></script>
+    <!-- Dejamos la URL base temporalmente para que el chivato cace el error de la última versión -->
+    <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js?v=debug"></script>
 
     <script>
       CMS.init({
@@ -20,7 +30,7 @@
             name: 'github',
             repo: 'dwebsmanagment-CEO/Prueba1',
             branch: 'main',
-            client_id: 'Ov23lifTQxJRG4Z8y78V' /* ✅ Lo devolvemos con tu nueva llave para que Sveltia no se rompa */
+            client_id: 'Ov23lifTQxJRG4Z8y78V'
           },
           media_folder: 'images',
           public_folder: '/images',
