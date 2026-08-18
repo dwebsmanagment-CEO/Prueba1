@@ -9,13 +9,13 @@
     </script>
   </head>
   <body>
-    <!-- Cargamos el motor moderno de Sveltia CMS -->
-    <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+    <!-- Añadimos un parámetro de versión aquí para forzar a Safari a descargar el motor de nuevo -->
+    <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js?v=madrugada4"></script>
 
     <script>
       CMS.init({
-        load_config_file: false, /* <-- Esta es la instrucción que nos pedía la pantalla */
         config: {
+          load_config_file: false, /* ✅ ¡Aquí está la pieza que faltaba, dentro de config! */
           backend: {
             name: 'github',
             repo: 'dwebsmanagment-CEO/Prueba1',
